@@ -23,6 +23,8 @@ public final class ModCreativeTabs {
                         output.accept(ModItems.BROOM.get());
                         output.accept(ModItems.MAJO_HAT.get());
                         output.accept(ModItems.MAJO_CLOTH.get());
+                        output.accept(ModItems.MAJO_STOCKING.get());
+                        output.accept(ModItems.MAJO_BOOTS.get());
                     })
                     .build()
     );

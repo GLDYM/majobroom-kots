@@ -19,10 +19,10 @@ import java.util.function.Consumer;
 /**
  * 魔女长袍物品 - 使用 GeckoLib 渲染
  */
-public class MajoRobeItem extends ArmorItem implements GeoItem {
+public class MajoClothItem extends ArmorItem implements GeoItem {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public MajoRobeItem(Properties properties) {
+    public MajoClothItem(Properties properties) {
         super(MajoArmorMaterials.MAJO, ArmorItem.Type.CHESTPLATE, properties);
     }
 

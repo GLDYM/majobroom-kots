@@ -4,7 +4,9 @@ import com.rcell.majobroom.client.input.KeyBindings;
 import com.rcell.majobroom.compat.CompatManager;
 import com.rcell.majobroom.init.ModItems;
 import com.rcell.majobroom.item.armor.MajoHatItem;
-import com.rcell.majobroom.item.armor.MajoRobeItem;
+import com.rcell.majobroom.item.armor.MajoClothItem;
+import com.rcell.majobroom.item.armor.MajoStockingItem;
+import com.rcell.majobroom.item.armor.MajoBootsItem;
 import com.rcell.majobroom.network.ModNetwork;
 import com.rcell.majobroom.network.packet.BroomInputPacket;
 import net.minecraft.client.Minecraft;
@@ -399,14 +401,24 @@ public class BroomEntity extends Entity implements GeoEntity {
         }
         
         ItemStack chest = entity.getItemBySlot(EquipmentSlot.CHEST);
-        if (chest.getItem() instanceof MajoRobeItem) {
+        if (chest.getItem() instanceof MajoClothItem) {
             return true;
         }
-        
+
+        ItemStack legs = entity.getItemBySlot(EquipmentSlot.LEGS);
+        if (legs.getItem() instanceof MajoStockingItem) {
+            return true;
+        }
+
+        ItemStack feet = entity.getItemBySlot(EquipmentSlot.FEET);
+        if (feet.getItem() instanceof MajoBootsItem) {
+            return true;
+        }
+
         // 检查装饰盔甲槽位（如果有兼容模组）
         List<ItemStack> extraArmor = CompatManager.getExtraArmorItems(entity);
         for (ItemStack stack : extraArmor) {
-            if (stack.getItem() instanceof MajoHatItem || stack.getItem() instanceof MajoRobeItem) {
+            if (stack.getItem() instanceof MajoHatItem || stack.getItem() instanceof MajoClothItem || stack.getItem() instanceof MajoStockingItem || stack.getItem() instanceof MajoBootsItem) {
                 return true;
             }
         }

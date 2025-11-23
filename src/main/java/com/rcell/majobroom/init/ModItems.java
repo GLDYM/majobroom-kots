@@ -3,7 +3,9 @@ package com.rcell.majobroom.init;
 import com.rcell.majobroom.MajoBroom;
 import com.rcell.majobroom.item.BroomItem;
 import com.rcell.majobroom.item.armor.MajoHatItem;
-import com.rcell.majobroom.item.armor.MajoRobeItem;
+import com.rcell.majobroom.item.armor.MajoClothItem;
+import com.rcell.majobroom.item.armor.MajoStockingItem;
+import com.rcell.majobroom.item.armor.MajoBootsItem;
 import com.rcell.majobroom.client.tooltip.ItemDescription;
 import com.rcell.majobroom.client.tooltip.TooltipModifier;
 import net.minecraft.world.item.Item;
@@ -27,7 +29,15 @@ public final class ModItems {
     );
 
     public static final RegistryObject<Item> MAJO_CLOTH = ITEMS.register(
-            "majo_cloth", () -> new MajoRobeItem(new Item.Properties())
+            "majo_cloth", () -> new MajoClothItem(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> MAJO_STOCKING = ITEMS.register(
+            "majo_stocking", () -> new MajoStockingItem(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> MAJO_BOOTS = ITEMS.register(
+            "majo_boots", () -> new MajoBootsItem(new Item.Properties())
     );
 
     public static void register(IEventBus modEventBus) {

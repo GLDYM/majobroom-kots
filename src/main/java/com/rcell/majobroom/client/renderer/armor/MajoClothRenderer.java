@@ -3,7 +3,7 @@ package com.rcell.majobroom.client.renderer.armor;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.rcell.majobroom.MajoBroom;
-import com.rcell.majobroom.item.armor.MajoRobeItem;
+import com.rcell.majobroom.item.armor.MajoClothItem;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +20,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
  * - dress 的旋转由左右腿的平均旋转决定
  * - 在骑乘状态下隐藏 sithide1 和 sithide2 节点
  */
-public class MajoClothRenderer extends GeoArmorRenderer<MajoRobeItem> {
+public class MajoClothRenderer extends GeoArmorRenderer<MajoClothItem> {
     public MajoClothRenderer() {
         super(new DefaultedItemGeoModel<>(
             ResourceLocation.fromNamespaceAndPath(MajoBroom.MODID, "armor/majo_cloth")
@@ -31,7 +31,7 @@ public class MajoClothRenderer extends GeoArmorRenderer<MajoRobeItem> {
      * 在渲染前处理 dress 节点的特殊运动逻辑
      */
     @Override
-    public void preRender(PoseStack poseStack, MajoRobeItem animatable, BakedGeoModel model,
+    public void preRender(PoseStack poseStack, MajoClothItem animatable, BakedGeoModel model,
                           @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer,
                           boolean isReRender, float partialTick, int packedLight, int packedOverlay,
                           float red, float green, float blue, float alpha) {
